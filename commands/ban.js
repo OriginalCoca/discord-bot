@@ -10,15 +10,15 @@ module.exports = {
 		const member = getUserFromMention(args[0], client);
 
 		if (!member) {
-			return message.reply('You need to mention the member you want to ban him');
+			return message.reply(':X: Vous devez mentionner le membre que vous souhaitez bannir :X:');
 		}
 
 		if (!message.member.permissions.has("BAN_MEMBERS")) {
-			return message.reply('I can\'t ban this user.');
+			return message.reply('Je ne peux pas bannir cet utilisateur.');
 		}
 
 		return message.guild.members.ban(member)
-			.then(() => message.reply(`${member.username} was banned.`))
-			.catch(error => message.reply('Sorry, an error occured.'));
+			.then(() => message.reply(`L'utilisateur ${member.username} a été banni sur serveur discord Pantoufle Studio.`))
+			.catch(error => message.reply(':X: Désolé, une erreur est survenue lors de la commande. (Code erreur : BA-09 à report à Florian.)'));
 	},
 };

@@ -7,17 +7,17 @@ module.exports = {
 		try {
 			deleteCount = parseInt(args[1], 10);
 		}catch(err) {
-			return message.reply('Please provide the number of messages to delete. (max 100)')
+			return message.reply(':X: Veuillez indiquer le nombre de messages à supprimer. (max 100) :X:')
 		}
         
 
 		if (!deleteCount || deleteCount < 2 || deleteCount > 100)
-			return message.reply('Please provide a number between 2 and 100 for the number of messages to delete');
+			return message.reply('Veuillez indiquer un nombre entre 2 et 100 pour le nombre de messages à supprimer');
 
 		const fetched = await message.channel.messages.fetch({
 			limit: deleteCount,
 		});
 		message.channel.bulkDelete(fetched)
-			.catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+			.catch(error => message.reply(`:X: Impossible de supprimer les messages en raison de: ${error} :X:`));
 	},
 };

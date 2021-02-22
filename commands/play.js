@@ -12,12 +12,12 @@ module.exports = {
       const voiceChannel = message.member.voice.channel;
       if (!voiceChannel)
         return message.channel.send(
-          "You need to be in a voice channel to play music!"
+          ":notes: :X: Vous avez besoin d'être dans un salon vocal pour pouvoir utiliser cette commande. :X: :notes:"
         );
       const permissions = voiceChannel.permissionsFor(message.client.user);
       if (!permissions.has("CONNECT") || !permissions.has("SPEAK")) {
         return message.channel.send(
-          "I need the permissions to join and speak in your voice channel!"
+          ":notes: :X: J'ai besoin des autorisations pour rejoindre et parler dans votre canal vocal! :X: :notes:"
         );
       }
 
@@ -53,7 +53,7 @@ module.exports = {
       } else {
         serverQueue.songs.push(song);
         return message.channel.send(
-          `${song.title} has been added to the queue!`
+          `:notes: ${song.title} a été ajouté à la file d'attente! :notes:`
         );
       }
     } catch (error) {
@@ -81,6 +81,6 @@ module.exports = {
       })
       .on("error", error => console.error(error));
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
-    serverQueue.textChannel.send(`Start playing: **${song.title}**`);
+    serverQueue.textChannel.send(`Démarrage de la musique **${song.title}**`);
   }
 };

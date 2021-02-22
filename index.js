@@ -1,6 +1,6 @@
 const fs = require('fs')
 const Discord = require('discord.js');
-const Client = require('./client/Client');
+const Client = require('./client/Client.js');
 const {
 	prefix,
 	token,
@@ -46,9 +46,9 @@ client.on('message', async message => {
 		}
 	} catch (error) {
 		console.error(error);
-		message.reply('There was an error trying to execute that command!');
+		message.reply('Une erreur est arrivé lors de cette commande!');
 	}
 });
 
 
-client.login(token);
+client.login(ODEyNDAyMTMwNTQyMzk1Mzkz.YDAOcQ.zUrLg-FWVfK5nvszc8ON35_35Ow);

@@ -8,6 +8,6 @@ module.exports = {
 		const args = split.slice(1);
 
 		const user = getUserFromMention(args[0], client);
-		message.channel.send(`Name: ${user.username}, ID: ${user.id}, Avatar: ${user.displayAvatarURL({ dynamic: true })}`);
+		message.channel.send(`Nom: ${user.username}, ID: ${user.id}, Avatar: ${user.displayAvatarURL({ dynamic: true })}`);
 	}
 };
